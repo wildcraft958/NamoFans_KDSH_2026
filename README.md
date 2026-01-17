@@ -19,7 +19,7 @@
 |----------|-------------|
 | [Final Report](NamoFans_KDSH_2026_Final_Report.pdf) | Complete technical documentation |
 | [Extended Report](NamoFans_KDSH_2026_Extended_Technical_Report.pdf) | Detailed appendices and analysis |
-| [Results](results.csv) | Full evaluation outputs |
+| [Results](final_results_test.csv) | Full submission output on test |
 | [Track A Code](Track%20A%20(VERITAS)/) | **Primary submission** - VERITAS implementation |
 | [Track B Code](Track%20B%20(BDH%20Experiments)/) | Experimental BDH exploration |
 
