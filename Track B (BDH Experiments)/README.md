@@ -16,6 +16,9 @@ Before developing VERITAS (Track A), we explored a biologically-inspired hypothe
 
 ### The Hypothesis
 
+![BDH Pipeline](images/bdh_pipeline.png)
+![Hebbian Learning](images/hebbian_learning.png)
+
 ```
 1. PRIME     → Feed novel into synaptic matrix (establish "Golden State" W*)
 2. PROBE     → Prime network with backstory (produce updated state W')
@@ -74,6 +77,9 @@ High Drift = Contradiction | Low Drift = Consistent
 | **Causal** | 0.10 | Constraint graph violations |
 
 ### Synaptic Drift Detection
+
+![BDH Drift Measurement](images/drift_threshold.png)
+![BDH Drift Visualization](images/drift_visualization.png)
 
 ```
 Novel Text (100k+ words)

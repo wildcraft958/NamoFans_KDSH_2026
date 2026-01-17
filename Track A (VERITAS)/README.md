@@ -47,33 +47,7 @@ Current approaches optimize for *plausibility* (sounds reasonable), but verifica
 
 ## Architecture Overview
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    VERITAS 5-Layer Pipeline                     │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  Layer 1: Ingestion & Atomization                               │
-│           Backstory → FActScore Decomposition → Atomic Claims   │
-│           Novel → Zero-Shot Classification                      │
-│                                                                 │
-│  Layer 2: Semantic Hierarchy                                    │
-│           Novel → RAPTOR Tree Indexing                          │
-│           "Zoomable" plot mapping (forest AND trees)            │
-│                                                                 │
-│  Layer 3: Relational Entanglement                               │
-│           HippoRAG Knowledge Graph                              │
-│           Time-bound character relationships                    │
-│                                                                 │
-│  Layer 4: Dual-Vector Retrieval                                 │
-│           Historian Stream (Macro-Context: plot, timeline)      │
-│           Simulator Stream (Micro-Context: dialogue, motives)   │
-│                                                                 │
-│  Layer 5: Conservative Adjudication                             │
-│           Evidence Ledger → Final Verdict + Confidence          │
-│           1 Contradiction > 10 Supports                         │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-```
+![VERITAS Architecture](images/veritas_architecture.png)
 
 > **Design Philosophy**: *"We replaced the 'black box' with a modular pipeline that mirrors human investigative steps."*
 
