@@ -121,13 +121,13 @@ def load_dataset_from_path(data_dir: Path) -> Tuple[pd.DataFrame, pd.DataFrame]:
     return train_df, test_df
 
 
-def load_dataset_from_kaggle(data_dir: Path) -> Tuple[pd.DataFrame, pd.DataFrame]:
+def load_dataset_from_kdsh(data_dir: Path) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
-    Load train and test CSVs from Kaggle dataset.
+    Load train and test CSVs from KDSH dataset.
     Alias for load_dataset_from_path.
     
     Args:
-        data_dir: Path to dataset directory (e.g., /kaggle/input/your-dataset/)
+        data_dir: Path to dataset directory (e.g., /kdsh/input/your-dataset/)
         
     Returns:
         (train_df, test_df)

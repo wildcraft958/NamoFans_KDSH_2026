@@ -1,8 +1,8 @@
 """
-BDH SOTA Narrative Consistency - Kaggle H100 Inference
+BDH SOTA Narrative Consistency - KDSH H100 Inference
 ======================================================
 
-Complete Kaggle notebook for KDSH 2026 Track B competition.
+Complete KDSH notebook for KDSH 2026 Track B competition.
 
 SOTA Components:
 1. BDHScanner (Hebbian Learning + Synaptic Drift)
@@ -11,13 +11,13 @@ SOTA Components:
 4. TemporalNarrativeReasoner (Allen's Algebra)
 5. CrossEncoderEvidenceAttributor
 
-Usage on Kaggle:
-1. Upload BDH code as a Kaggle Dataset (name: "bdh-code")
+Usage on KDSH:
+1. Upload BDH code as a KDSH Dataset (name: "bdh-code")
 2. Add competition dataset
 3. Run this notebook
 
 Dataset expected structure:
-    /kaggle/input/kdsh-2026/
+    /kdsh/input/kdsh-2026/
         ├── train.csv
         ├── test.csv
         └── Books/
@@ -37,7 +37,7 @@ import sys
 def parse_args():
     """Parse command-line arguments."""
     parser = argparse.ArgumentParser(
-        description="BDH SOTA Narrative Consistency - Kaggle Inference"
+        description="BDH SOTA Narrative Consistency - KDSH Inference"
     )
     parser.add_argument(
         '--use-pathway',
@@ -50,7 +50,7 @@ def parse_args():
         default='cuda',
         help='Device to use (cuda/cpu)'
     )
-    # Handle Kaggle/Jupyter notebook environment (no args)
+    # Handle KDSH/Jupyter notebook environment (no args)
     try:
         if 'ipykernel' in sys.modules:
             return argparse.Namespace(use_pathway=False, device='cuda')
@@ -101,19 +101,19 @@ from tqdm.auto import tqdm
 # CELL 2: Add BDH Code to Path
 # ============================================================================
 
-# Kaggle paths
-KAGGLE_INPUT = Path("/kaggle/input")
-KAGGLE_WORKING = Path("/kaggle/working")
+# KDSH paths
+KDSH_INPUT = Path("/kdsh/input")
+KDSH_WORKING = Path("/kdsh/working")
 
-# BDH code location (uploaded as Kaggle dataset)
-BDH_CODE_PATH = KAGGLE_INPUT / "bdh-code" / "BDH"
+# BDH code location (uploaded as KDSH dataset)
+BDH_CODE_PATH = KDSH_INPUT / "bdh-code" / "BDH"
 
 # Alternative: If running locally or code is in working directory
 if not BDH_CODE_PATH.exists():
     BDH_CODE_PATH = Path(".")  # Current directory
     
 if not BDH_CODE_PATH.exists():
-    BDH_CODE_PATH = Path("/kaggle/working/BDH")
+    BDH_CODE_PATH = Path("/kdsh/working/BDH")
 
 # Add to Python path
 sys.path.insert(0, str(BDH_CODE_PATH))
@@ -145,13 +145,13 @@ if torch.cuda.is_available():
 # ============================================================================
 
 # Competition dataset path
-DATASET_PATH = KAGGLE_INPUT / "kdsh-2026-narrative-consistency"
+DATASET_PATH = KDSH_INPUT / "kdsh-2026-narrative-consistency"
 
 # Alternative paths to try
 DATASET_PATHS = [
-    KAGGLE_INPUT / "kdsh-2026-narrative-consistency",
-    KAGGLE_INPUT / "kdsh-2026",
-    KAGGLE_INPUT / "kdsh2026",
+    KDSH_INPUT / "kdsh-2026-narrative-consistency",
+    KDSH_INPUT / "kdsh-2026",
+    KDSH_INPUT / "kdsh2026",
     Path("dataset"),  # Local testing
 ]
 
@@ -349,12 +349,12 @@ print("="*60)
 results_df = pd.DataFrame(results)
 
 # Save CSV submission
-submission_path = KAGGLE_WORKING / "submission.csv"
+submission_path = KDSH_WORKING / "submission.csv"
 results_df[['id', 'Prediction']].to_csv(submission_path, index=False)
 print(f"Submission saved to: {submission_path}")
 
 # Save detailed results (for debugging)
-detailed_path = KAGGLE_WORKING / "detailed_results.csv"
+detailed_path = KDSH_WORKING / "detailed_results.csv"
 results_df.to_csv(detailed_path, index=False)
 print(f"Detailed results saved to: {detailed_path}")
 
