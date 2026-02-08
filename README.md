@@ -39,7 +39,7 @@
 
 | Model | Accuracy | Notes |
 |-------|----------|-------|
-| Gemini 2.5 Pro (Baseline) | 65% | SOTA LLM |
+| Gemini 3 Pro (Baseline) | 65% | SOTA LLM |
 | Baseline RAG | 68% | Standard retrieval |
 | BDH Exploration (Track B) | 66% | Hebbian learning |
 | **VERITAS (Track A)** | **83%** | **+18pp improvement** |
